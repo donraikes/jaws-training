@@ -6,4 +6,5 @@ ojet build web --release
 git add --all .
 git commit -a -m "After release build on master branch."
 git push origin master
+git checkout development
 popd
