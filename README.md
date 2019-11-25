@@ -8,5 +8,5 @@ The concepts for this application are loosely taken from the w3.org's <a
 href="https://w3.org/demos/bad.html" target="_blank">WAI Before and After
 Demo</a>.
 
-The pieces of the application will be explained in more depth in the
-[[doc/contents.md]](Contents) documents.
+Go to the [Table of Contents](doc/contents.md) for more details on the
+features of the application.
