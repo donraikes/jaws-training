@@ -10,7 +10,7 @@
 define(['accUtils'],
  function(accUtils) {
 
-    function DashboardViewModel() {
+    function overviewViewModel() {
       var self = this;
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.
@@ -24,7 +24,7 @@ define(['accUtils'],
        * after being disconnected.
        */
       self.connected = function() {
-        accUtils.announce('Dashboard page loaded.', 'assertive');
+        accUtils.announce('Overviewpage loaded.', 'assertive');
         document.title = "Dashboard";
         // Implement further logic if needed
       };
@@ -50,6 +50,6 @@ define(['accUtils'],
      * return a constructor for the ViewModel so that the ViewModel is constructed
      * each time the view is displayed.
      */
-    return DashboardViewModel;
+    return overviewViewModel;
   }
 );

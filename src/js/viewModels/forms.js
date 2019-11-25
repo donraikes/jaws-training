@@ -5,12 +5,12 @@
  * @ignore
  */
 /*
- * Your incidents ViewModel code goes here
+ * Your customer ViewModel code goes here
  */
 define(['accUtils'],
  function(accUtils) {
 
-    function IncidentsViewModel() {
+    function formsViewModel() {
       var self = this;
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.
@@ -24,8 +24,8 @@ define(['accUtils'],
        * after being disconnected.
        */
       self.connected = function() {
-        accUtils.announce('Incidents page loaded.', 'assertive');
-        document.title = "Incidents";
+        accUtils.announce('CuFormspage loaded.', 'assertive');
+        document.title = "Customers";
         // Implement further logic if needed
       };
 
@@ -50,6 +50,6 @@ define(['accUtils'],
      * return a constructor for the ViewModel so that the ViewModel is constructed
      * each time the view is displayed.
      */
-    return IncidentsViewModel;
+    return formsViewModel;
   }
 );
