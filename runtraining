@@ -1,0 +1,4 @@
+#!/bin/bash
+pushd ~/jaws-training
+ojet serve web 
+popd
