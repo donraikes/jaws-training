@@ -2,16 +2,45 @@
  * @license
  * Copyright (c) 2014, 2019, Oracle and/or its affiliates.
  * The Universal Permissive License (UPL), Version 1.0
- * @ignore
  */
-/*
- * Your about ViewModel code goes here
- */
-define(['accUtils'],
- function(accUtils) {
-
-    function imagesViewModel() {
+define(
+  ['accUtils',
+  'knockout',
+    'ojs/ojmodule-element-utils',
+    'ojs/ojrouter',
+    'ojs/ojknockout',
+    'ojs/ojnavigationlist',
+    'ojs/ojdefer',
+    'ojs/ojmodule',
+    'ojs/ojmodule-element'
+  ],
+  function (accUtils, ko, ModuleUtils, Router) {
+    function ImagesViewModel() {
       var self = this;
+
+      var parentRouter = Router.rootInstance;
+      self.router = parentRouter.createChildRouter('tablimages')
+        .configure({
+          before: { label: 'Before', value: 'before', isDefault: true },
+          after: { label: 'After', value: 'after' }
+        });
+
+      Router.sync();
+
+      self.moduleConfig = ko.pureComputed(function () {
+        var name = self.router.moduleConfig.name();
+        var viewPath = 'views/imageContent/' + name + '.html';
+        var modelPath = 'viewModels/imageContent/' + name;
+        return Promise.all([
+          ModuleUtils.createView({ viewPath: viewPath }),
+          ModuleUtils.createViewModel({ viewModelPath: modelPath })
+        ]).then(function (values) { return { view: values[0], viewModel: values[1] }; });
+      });
+
+      self.changeHandler = function (event) {
+        self.router.go(event.detail.value);
+      };
+
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.
 
@@ -23,16 +52,16 @@ define(['accUtils'],
        * and inserted into the DOM and after the View is reconnected
        * after being disconnected.
        */
-      self.connected = function() {
-        accUtils.announce('Imagespage loaded.', 'assertive');
-        document.title = "About";
-        // Implement further logic if needed
+      self.connected = function () {
+        accUtils.announce('Images page loaded.', 'assertive');
+        document.title = "Images";
+        // Implement if needed
       };
 
       /**
        * Optional ViewModel method invoked after the View is disconnected from the DOM.
        */
-      self.disconnected = function() {
+      self.disconnected = function () {
         // Implement if needed
       };
 
@@ -40,16 +69,16 @@ define(['accUtils'],
        * Optional ViewModel method invoked after transition to the new View is complete.
        * That includes any possible animation between the old and the new View.
        */
-      self.transitionCompleted = function() {
+      self.transitionCompleted = function () {
         // Implement if needed
       };
     }
 
     /*
-     * Returns an instance of the ViewModel providing one instance of the ViewModel. If needed,
-     * return a constructor for the ViewModel so that the ViewModel is constructed
-     * each time the view is displayed.
+     * Returns a constructor for the ViewModel so that the ViewModel is constructed
+     * each time the view is displayed.  Return an instance of the ViewModel if
+     * only one instance of the ViewModel is needed.
      */
-    return imagesViewModel;
+    return new ImagesViewModel();
   }
 );
