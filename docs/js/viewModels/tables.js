@@ -2,6 +2,5 @@
  * @license
  * Copyright (c) 2014, 2019, Oracle and/or its affiliates.
  * The Universal Permissive License (UPL), Version 1.0
- * @ignore
  */
-define(["accUtils"],(function(n){return function(){this.connected=function(){n.announce("About page loaded.","assertive"),document.title="About"},this.disconnected=function(){},this.transitionCompleted=function(){}}}));
+define(["accUtils","knockout","ojs/ojmodule-element-utils","ojs/ojrouter","ojs/ojknockout","ojs/ojnavigationlist","ojs/ojdefer","ojs/ojmodule","ojs/ojmodule-element"],(function(e,o,t,n){return new function(){var l=this,i=n.rootInstance;l.router=i.createChildRouter("tables").configure({before:{label:"Before",value:"before",isDefault:!0},after:{label:"After",value:"after"}}),n.sync(),l.moduleConfig=o.pureComputed((function(){var e=l.router.moduleConfig.name(),o="views/tableContent/"+e+".html",n="viewModels/tableContent/"+e;return Promise.all([t.createView({viewPath:o}),t.createViewModel({viewModelPath:n})]).then((function(e){return{view:e[0],viewModel:e[1]}}))})),l.changeHandler=function(e){l.router.go(e.detail.value)},l.connected=function(){e.announce("Tables page loaded.","assertive"),document.title="Tables"},l.disconnected=function(){},l.transitionCompleted=function(){}}}));
