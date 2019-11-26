@@ -18,11 +18,10 @@ define(
       var self = this;
 
       var parentRouter = Router.rootInstance;
-      self.router = parentRouter.createChildRouter('form')
+      self.router = parentRouter.createChildRouter('links')
         .configure({
-          select: { label: 'Select', value: 'select', isDefault: true },
-          input: { label: 'Input', value: 'input' },
-          validation: { label: 'Validation', value: 'validation' }
+          before: { label: 'Before', value: 'before', isDefault: true },
+          after: { label: 'After', value: 'after' }
         });
 
       Router.sync();
