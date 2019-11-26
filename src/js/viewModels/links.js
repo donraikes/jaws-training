@@ -4,7 +4,8 @@
  * The Universal Permissive License (UPL), Version 1.0
  */
 define(
-  ['knockout',
+  ['accUtils',
+  'knockout',
     'ojs/ojmodule-element-utils',
     'ojs/ojrouter',
     'ojs/ojknockout',
@@ -13,7 +14,7 @@ define(
     'ojs/ojmodule',
     'ojs/ojmodule-element'
   ],
-  function (ko, ModuleUtils, Router) {
+  function (accUtils, ko, ModuleUtils, Router) {
     function LinksViewModel() {
       var self = this;
 
@@ -52,6 +53,8 @@ define(
        * after being disconnected.
        */
       self.connected = function () {
+        accUtils.announce('Linkspage loaded.', 'assertive');
+        document.title = "Links";
         // Implement if needed
       };
 
