@@ -28,8 +28,8 @@ define(
 
       self.moduleConfig = ko.pureComputed(function () {
         var name = self.router.moduleConfig.name();
-        var viewPath = 'views/linksContent/' + name + '.html';
-        var modelPath = 'viewModels/linksContent/' + name;
+        var viewPath = 'views/linkContent/' + name + '.html';
+        var modelPath = 'viewModels/linkContent/' + name;
         return Promise.all([
           ModuleUtils.createView({ viewPath: viewPath }),
           ModuleUtils.createViewModel({ viewModelPath: modelPath })
