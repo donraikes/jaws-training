@@ -53,8 +53,6 @@ define(
        * after being disconnected.
        */
       self.connected = function () {
-        accUtils.announce('Tables page loaded.', 'assertive');
-        document.title = "Tables";
         // Implement if needed
       };
 

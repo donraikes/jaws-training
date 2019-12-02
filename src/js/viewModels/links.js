@@ -53,8 +53,6 @@ define(
        * after being disconnected.
        */
       self.connected = function () {
-        accUtils.announce('Linkspage loaded.', 'assertive');
-        document.title = "Links";
         // Implement if needed
       };
 

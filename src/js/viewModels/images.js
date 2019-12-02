@@ -53,8 +53,6 @@ define(
        * after being disconnected.
        */
       self.connected = function () {
-        accUtils.announce('Images page loaded.', 'assertive');
-        document.title = "Images";
         // Implement if needed
       };
 

@@ -24,7 +24,8 @@ define(['accUtils'],
        * after being disconnected.
        */
       self.connected = function() {
-        // Implement further logic if needed
+        accUtils.announce('Links page / after tab  loaded.', 'assertive');
+        document.title = "Links.after :: JAWS Validation Training";
       };
 
       /**

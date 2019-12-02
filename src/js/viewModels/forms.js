@@ -53,8 +53,6 @@ define(
        * after being disconnected.
        */
       self.connected = function () {
-        accUtils.announce('Forms page loaded.', 'assertive');
-        document.title = "Forms";
       };
 
       /**
