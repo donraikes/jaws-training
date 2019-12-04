@@ -20,27 +20,29 @@
 		<h3>Form Controls after taking accessibility into consideration</h3>
 		<br/>
                 <h2 class="header">This Week's Survey: More city parks - a pain or a gain?</h2> 
-                <form action="survey.php" method="post">
-                <p>Fields are required if not otherwise noted.</p>
-                <fieldset id="park">
-                  <legend>Favorite Park</legend>
-                  <p>Which is your favorite city park?</p>
-                  <div style="float:left; width:40%;">
-                    <p class="input"><input type="radio" name="res" id="nn" value="1"> <label for="nn">None</label></p>
-                    <p class="input"><input type="radio" name="res" id="cp" value="2"> <label for="cp">Central Park</label></p>
-                    <p class="input"><input type="radio" name="res" id="gp" value="3"> <label for="gp">Grand Park</label></p>
-                  </div>
-                  <div style="float:left; width:40%;">
-                    <p class="input"><input type="radio" name="res" id="jp" value="4"> <label for="jp">Jurassic Park</label></p>
-                    <p class="input"><input type="radio" name="res" id="sp" value="5"> <label for="sp">South Park</label></p>
-                    <p class="input"><input type="radio" name="res" id="ot" value="6"> <label for="ot">Other</label></p>
-                  </div>
-                </fieldset>
+                <form>
+  <fieldset>
+    <legend>Choose your favorite park</legend>
+<div>
+    <input type="radio" id="cp" name="park" value="cp" required>
+    <label for="cp">"Central Park"</label>
+</div>
+<div>
+    <input type="radio" id="gp" name="park" value="gp" required>
+    <label for="gp">"Glacier Park"</label>
+</div>
+<div>
+<input type="radio" id="jp" name="park" value="jp"required checked>
+<label for="jp">"Jellystone Park"</label>
+</div>
+<div>
+    <input type="radio" id="yp" name="park" value="yp" required>
+    <label for="yp">"Yellowstone Park"</label>
+</div>
+  </fieldset>
                 <fieldset id="city">
-                  <legend>Greenest City</legend>
-                  <p>Which city do you find is the greenest?</p>
-                  <p class="input"><select name="cc" id="cc" title="cities of the world">
-                    <option value="0">select a city from this list</option>
+                  <legend>Which city do you find the greenest?</legend>
+					<select required>
                     <optgroup label="A">
                       <option value="1">Abu Dhabi, United Arab Emirates</option>
                       <option value="2">Abuja, Nigeria</option>
@@ -288,15 +290,32 @@
                     <optgroup label="Z">
                       <option value="194">Zagreb, Croatia</option>
                     </optgroup>
-                  </select></p>
+                  </select>
                 </fieldset>
                 <fieldset>
-                  <legend>Free Newsletter (optional)</legend>
-                  <p>To receive our free newsletter fill in the following details:</p>
+                  <legend>To receive our free newsletter fill in the remaining
+				  fields.</legend>
                   <div style="width: 32em">
-                    <p id="namenewsletter" class="input"><label for="mr">Mr. <input type="radio" name="t" id="mr" value="mr" title="title"></label> <label for="mrs">Mrs. <input type="radio" name="t" id="mrs" value="mrs" title="title"></label> <label for="n">Name: <input type="text" name="n" id="n" size="30" style="margin-left: 0.5em;"></label></p>
-                    <p id="emailinput" class="input" style="width: 16em; float: left; margin-top: 0.5em;"><label for="em">eMail Address: <br><input type="text" name="em" id="em" size="20"></label></p>
-                    <p id="emailvalid" class="input" style="width: 16em; float: left; margin-top: 0.5em;"><label for="ev">Retype eMail: <br><input type="text" name="ev" id="ev" size="20"></label></p>
+				  <fieldset>
+				  <legend>Prefix</legend>
+				  <div>
+				  <input type=radio" id="mr" name="prefix" value="mr" checked>
+				  <label for="mr">"MR."</label>
+				  </div>
+				  <div>
+				  <input type="radio" name="prefix" id="mrs" value="mrs">
+				  <label for="mrs">"MRS."</label>
+				  </div>
+				  </fieldset>
+				  <div>
+				  <label for="fname">First Name:<input type="text" size="15"
+				  id="fname"/></label><br/>
+				  <label for="lname">Last Name: <input type="text" size="15"
+				  id="lname"></label><br/>
+				  <label for="em1">Email: <input tpe="text" size="30"
+				  id="em1"></label><br/>
+				  <label for="em2">Retype Email: <input type="text" size="30"
+				  id="em2"></label></br>
                   </div>
                 </fieldset>
                 <p class="input"><input type="submit" id="submit" value="submit" alt="submit" name="submit"></p>
