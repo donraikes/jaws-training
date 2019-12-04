@@ -24,8 +24,8 @@ define(['accUtils'],
        * after being disconnected.
        */
       self.connected = function() {
-        accUtils.announce('Overviewpage loaded.', 'assertive');
-        document.title = "Dashboard";
+        accUtils.announce('Overview page loaded.', 'assertive');
+        document.title = "Overview :: JAWS Validation Training";
         // Implement further logic if needed
       };
 

@@ -25,7 +25,7 @@ define(['accUtils'],
        */
       self.connected = function() {
         accUtils.announce('About page loaded.', 'assertive');
-        document.title = "About";
+        document.title = "About :: JAWS Validation Training";
         // Implement further logic if needed
       };
 
