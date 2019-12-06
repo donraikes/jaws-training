@@ -1,0 +1,22 @@
+<form>
+<fieldset>
+<legend>Click the green button on the left to continue, or the red button on
+the right to finish.</legend>
+<div>
+<table>
+<tr>
+<td width="40%>
+<input type="button" style="background-color:green;color:white;width:150px;
+height:40px;" value="Go">
+</td>
+<td width="20%">
+</td>
+<td width="40%">
+<input type="button" style="background-color:red;color:white;width:150px;
+height:40px;" value="Stop">
+</td>
+</tr>
+</table>
+</div>
+</fieldset>
+</form>

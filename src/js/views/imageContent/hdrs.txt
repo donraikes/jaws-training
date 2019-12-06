@@ -1,0 +1,2 @@
+<h4>Descriptive and non-descriptive alt text</h4>
+<h4>Use of color or position as only refference</h4>
