@@ -53,4 +53,48 @@
                     </tr>
                   </tbody>
                 </table> 
+
+
+<p>Because of some inconsistencies with how JAWS handles complex tables, some ARIA attributes have to be added to ensure that this kind of table is read consistently across screenreaders and browsers.</p>
+<table role="grid">
+<caption>Table 2: - Two-year financial Information - with IDs and headers plus aria spans and roles</caption>
+<tr role="row">
+<th id="cat" role="columnheader">Category</th>
+<th colspan="4" aria-colspan="4" id="y1" role="columnheader">2017</th>
+<th colspan="4" aria-colspan="4" id="y2" role="columnheader">2018</th>
+</tr>
+<tr role="row">
+<th> </th>
+<th id="y1q1" role="columnheader">1st Quarter</th>
+<th id="y1q2" role="columnheader">2nd Quarter</th>
+<th id="y1q3" role="columnheader">3rd Quarter</th>
+<th id="y1q4" role="columnheader">4th Quarter</th>
+<th id="y2q1" role="columnheader">1st Quarter</th>
+<th id="y2q2" role="columnheader">2nd Quarter</th>
+<th id="y2q3" role="columnheader">3rd Quarter</th>
+<th id="y2q4" role="columnheader">4th Quarter</th>
+</tr>
+<tr role="row">
+<th id="exp" role="rowheader">Expenses</th>
+<td >$100,000</td>
+<td >$125,000</td>
+<td >$85,000</td>
+<td >$50,000</td>
+<td >$75,000</td>
+<td >$85,000</td>
+<td >$90,000</td>
+<td >$45,000</td>
+</tr>
+<tr role="row">
+<th id="inc" role="rowheader">Income</th>
+<td >150,000</td>
+<td >150,000</td>
+<td >100,000</td>
+<td >$100,000</td>
+<td >$50,000</td>
+<td >$100,000</td>
+<td >$75,000</td>
+<td >150,000</td>
+</tr>
+</table>
 </div>
